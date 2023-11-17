@@ -6,6 +6,9 @@ const teamRoutes = require('./routes/teamRoutes');
 const userRoutes = require('./routes/userRoutes'); // Import the new user routes
 const PORT = 8080;
 
+var cors = require('cors')
+
+app.use(cors())
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb+srv://KCCStoreDB:KCCStore123@cluster0.ilok18h.mongodb.net/', {
