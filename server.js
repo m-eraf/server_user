@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const teamRoutes = require('./routes/teamRoutes');
 const userRoutes = require('./routes/userRoutes'); // Import the new user routes
+const PORT = 8080;
 
 app.use(bodyParser.json());
 
@@ -21,6 +22,6 @@ dbConnection.once('open', () => {
 app.use("/team", teamRoutes);
 app.use("/api/users", userRoutes); 
 
-app.listen(8080, () => {
-  console.log(`Server is running on port 8080`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
